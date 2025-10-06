@@ -30,6 +30,7 @@ const getUserRole = (ctx: StartSceneContext): UserRole | undefined => {
   return db.getUserRole(ctx.from.id);
 };
 
+
 // Enter scene - show main menu
 startScene.enter(async (ctx) => {
   const role = getUserRole(ctx);
@@ -55,6 +56,11 @@ startScene.enter(async (ctx) => {
     keyboard.push([
       { text: "🔍 Qidiruv", switch_inline_query_current_chat: "" },
     ]);
+  } else if (role === "seller_collector") {
+    keyboard.push([
+      { text: "📤 PDF Yuklash", callback_data: "upload" },
+      { text: "🔍 Qidiruv", switch_inline_query_current_chat: "" },
+    ]);
   }
 
   let welcomeMessage = "👋 Xush kelibsiz!\n\n";
@@ -74,6 +80,12 @@ startScene.enter(async (ctx) => {
   } else if (role === "collector") {
     welcomeMessage += "🔍 Sizning rolingiz: Undiruvchi\n\n";
     welcomeMessage += "📋 Mavjud buyruqlar:\n";
+    welcomeMessage += "/cancel - Amalni bekor qilish\n\n";
+    welcomeMessage += '🔍 Qidiruv uchun "🔍 Qidiruv" tugmasini bosing';
+  } else if (role === "seller_collector") {
+    welcomeMessage += "📋 Sizning rolingiz: Sotuvchi va Undiruvchi\n\n";
+    welcomeMessage += "📋 Mavjud buyruqlar:\n";
+    welcomeMessage += "/upload - PDF yuklash\n";
     welcomeMessage += "/cancel - Amalni bekor qilish\n\n";
     welcomeMessage += '🔍 Qidiruv uchun "🔍 Qidiruv" tugmasini bosing';
   }

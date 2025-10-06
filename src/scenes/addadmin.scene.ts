@@ -17,6 +17,11 @@ export const addAdminScene = new Scenes.BaseScene<AddAdminSceneContext>(
 
 const SUPER_ADMIN_ID = parseInt(process.env.SUPER_ADMIN_ID!);
 
+// Handle /start command - return to start scene
+addAdminScene.command("start", async (ctx) => {
+  return ctx.scene.enter("start");
+});
+
 // Enter scene
 addAdminScene.enter(async (ctx) => {
   await ctx.reply(
@@ -26,9 +31,6 @@ addAdminScene.enter(async (ctx) => {
       "🔢 ID: 123456789\n\n" +
       "❌ Bekor qilish: /cancel"
   );
-});
-addAdminScene.hears("/start", async (ctx) => {
-  return ctx.scene.enter("start");
 });
 
 // Handle text messages

@@ -70,7 +70,7 @@ npm start
 
 ## Foydalanuvchi Rollari
 
-Bot 3 xil rol bilan ishlaydi:
+Bot 4 xil rol bilan ishlaydi:
 
 ### 👑 Super Admin
 - Barcha huquqlarga ega
@@ -88,6 +88,11 @@ Bot 3 xil rol bilan ishlaydi:
 - Faqat qidiruv va ko'rish huquqi
 - Hujjatlarni qidirish va yuklab olish mumkin
 - PDF yuklash huquqi yo'q
+
+### 📋 Sotuvchi va Undiruvchi (Seller + Collector)
+- PDF yuklash va qidiruv huquqi
+- Shartnoma yuklash va qidirish
+- Foydalanuvchilarni boshqarish huquqi yo'q
 
 ## Foydalanish
 
@@ -110,6 +115,12 @@ Bot 3 xil rol bilan ishlaydi:
 - `/search` - Qidiruv (yoki inline qidiruv tugmasi)
 - `/cancel` - Joriy amalni bekor qilish
 
+**Sotuvchi va Undiruvchi uchun:**
+- `/start` - Botni ishga tushirish
+- `/upload` - PDF yuklash
+- `/search` - Qidiruv (yoki inline qidiruv tugmasi)
+- `/cancel` - Joriy amalni bekor qilish
+
 ### Asosiy menyu (Inline tugmalar)
 
 `/start` buyrug'idan keyin rolingizga mos tugmalar ko'rsatiladi:
@@ -123,6 +134,10 @@ Bot 3 xil rol bilan ishlaydi:
 - 📤 **PDF Yuklash** - Yangi PDF yuklash uchun
 
 **Undiruvchi:**
+- 🔍 **Qidiruv** - Inline qidiruv uchun
+
+**Sotuvchi va Undiruvchi:**
+- 📤 **PDF Yuklash** - Yangi PDF yuklash uchun
 - 🔍 **Qidiruv** - Inline qidiruv uchun
 
 ### PDF yuklash jarayoni
@@ -179,14 +194,14 @@ Super Admin foydalanuvchilarni qo'shish, o'chirish va rollarni boshqarish huquqi
 
 ### Ruxsatlar ro'yxati:
 
-| Funksiya | Super Admin | Sotuvchi | Undiruvchi |
-|----------|-------------|----------|------------|
-| PDF yuklash | ✅ | ✅ | ❌ |
-| Qidiruv va ko'rish | ✅ | ❌ | ✅ |
-| Foydalanuvchilarni qo'shish | ✅ | ❌ | ❌ |
-| Foydalanuvchilarni o'chirish | ✅ | ❌ | ❌ |
-| Rollarni o'zgartirish | ✅ | ❌ | ❌ |
-| Barcha huquqlar | ✅ | ❌ | ❌ |
+| Funksiya | Super Admin | Sotuvchi | Undiruvchi | Sotuvchi+Undiruvchi |
+|----------|-------------|----------|------------|---------------------|
+| PDF yuklash | ✅ | ✅ | ❌ | ✅ |
+| Qidiruv va ko'rish | ✅ | ❌ | ✅ | ✅ |
+| Foydalanuvchilarni qo'shish | ✅ | ❌ | ❌ | ❌ |
+| Foydalanuvchilarni o'chirish | ✅ | ❌ | ❌ | ❌ |
+| Rollarni o'zgartirish | ✅ | ❌ | ❌ | ❌ |
+| Barcha huquqlar | ✅ | ❌ | ❌ | ❌ |
 
 ## Struktura
 

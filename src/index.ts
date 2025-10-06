@@ -54,12 +54,12 @@ const isSuperAdmin = (ctx: MyContext): boolean => {
 
 const canUpload = (ctx: MyContext): boolean => {
   const role = getUserRole(ctx);
-  return role === "super_admin" || role === "seller";
+  return role === "super_admin" || role === "seller" || role === "seller_collector";
 };
 
 const canSearch = (ctx: MyContext): boolean => {
   const role = getUserRole(ctx);
-  return role === "super_admin" || role === "collector";
+  return role === "super_admin" || role === "collector" || role === "seller_collector";
 };
 
 // Start command

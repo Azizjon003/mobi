@@ -25,7 +25,7 @@ const canUpload = (ctx: UploadSceneContext): boolean => {
   if (ctx.from.id === SUPER_ADMIN_ID) return true;
 
   const role = db.getUserRole(ctx.from.id);
-  return role === "seller" || role === "super_admin";
+  return role === "seller" || role === "super_admin" || role === "seller_collector";
 };
 
 // Enter scene

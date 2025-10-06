@@ -26,12 +26,14 @@ const roleNames: Record<UserRole, string> = {
   super_admin: "Super Admin",
   seller: "Sotuvchi",
   collector: "Undiruvchi",
+  seller_collector: "Sotuvchi va Undiruvchi",
 };
 
 const roleDescriptions: Record<UserRole, string> = {
   super_admin: "Barcha huquqlar",
   seller: "Shartnoma yuklash",
   collector: "Qidiruv va ko'rish",
+  seller_collector: "Yuklash va Qidiruv",
 };
 
 // Enter scene - show user list
@@ -208,6 +210,7 @@ userManagementScene.on(message("text"), async (ctx) => {
           inline_keyboard: [
             [{ text: "👤 Sotuvchi", callback_data: "select_role:seller" }],
             [{ text: "🔍 Undiruvchi", callback_data: "select_role:collector" }],
+            [{ text: "📋 Sotuvchi va Undiruvchi", callback_data: "select_role:seller_collector" }],
             [
               {
                 text: "👑 Super Admin",
@@ -257,12 +260,14 @@ userManagementScene.on(message("text"), async (ctx) => {
       "Foydalanuvchi rolini tanlang:\n\n" +
         "👤 Sotuvchi - Shartnoma yuklash huquqi\n" +
         "🔍 Undiruvchi - Qidiruv va ko'rish huquqi\n" +
+        "📋 Sotuvchi va Undiruvchi - Yuklash va qidiruv\n" +
         "👑 Super Admin - Barcha huquqlar",
       {
         reply_markup: {
           inline_keyboard: [
             [{ text: "👤 Sotuvchi", callback_data: "select_role:seller" }],
             [{ text: "🔍 Undiruvchi", callback_data: "select_role:collector" }],
+            [{ text: "📋 Sotuvchi va Undiruvchi", callback_data: "select_role:seller_collector" }],
             [
               {
                 text: "👑 Super Admin",
@@ -317,6 +322,7 @@ userManagementScene.on(message("text"), async (ctx) => {
           inline_keyboard: [
             [{ text: "👤 Sotuvchi", callback_data: "select_role:seller" }],
             [{ text: "🔍 Undiruvchi", callback_data: "select_role:collector" }],
+            [{ text: "📋 Sotuvchi va Undiruvchi", callback_data: "select_role:seller_collector" }],
             [
               {
                 text: "👑 Super Admin",
