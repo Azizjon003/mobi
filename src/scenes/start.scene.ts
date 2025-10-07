@@ -30,7 +30,6 @@ const getUserRole = (ctx: StartSceneContext): UserRole | undefined => {
   return db.getUserRole(ctx.from.id);
 };
 
-
 // Enter scene - show main menu
 startScene.enter(async (ctx) => {
   const role = getUserRole(ctx);
@@ -95,6 +94,10 @@ startScene.enter(async (ctx) => {
       inline_keyboard: keyboard,
     },
   });
+});
+
+startScene.hears("/start", async (ctx) => {
+  return ctx.scene.enter("start");
 });
 
 // Handle callback queries

@@ -65,7 +65,7 @@ const canSearch = (ctx: MyContext): boolean => {
 // Start command
 bot.command("start", async (ctx) => {
   console.log(!isAuthorized(ctx));
-  if (!isAuthorized(ctx)) {
+  if (! (ctx)) {
     console.log("❌ Kechirasiz, sizda bu botdan foydalanish huquqi yo'q.");
     return ctx.reply("❌ Kechirasiz, sizda bu botdan foydalanish huquqi yo'q.");
   }
