@@ -54,6 +54,12 @@ class Database {
     );
   }
 
+  contractNumberExists(applicationNumber: string): boolean {
+    return this.documents.some(doc =>
+      doc.applicationNumber.toLowerCase() === applicationNumber.toLowerCase()
+    );
+  }
+
   getAllDocuments(): Document[] {
     return this.documents;
   }

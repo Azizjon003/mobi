@@ -93,6 +93,13 @@ uploadScene.on(message("text"), async (ctx) => {
   }
 
   // If we have everything, save the document
+  // First check if contract number already exists
+  if (db.contractNumberExists(text)) {
+    return ctx.reply(
+      "❌ Bu shartnoma raqami oldin ro'yxatdan o'tgan!\n\n📋 Iltimos, boshqa shartnoma raqamini kiriting:"
+    );
+  }
+
   try {
     const CHANNEL_ID = process.env.CHANNEL_ID!;
 
