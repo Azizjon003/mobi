@@ -70,7 +70,9 @@ addAdminScene.on(message("text"), async (ctx) => {
         `❌ Bu foydalanuvchi allaqachon mavjud.\n\n🆔 User ID: ${userId}`
       );
     }
-
+    
+    
+    ctx.session = {}; // tozalash
     return ctx.scene.enter("start");
   }
 

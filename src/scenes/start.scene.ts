@@ -34,6 +34,7 @@ const getUserRole = (ctx: StartSceneContext): UserRole | undefined => {
 startScene.enter(async (ctx) => {
   const role = getUserRole(ctx);
   console.log(role);
+   ctx.session = {}; // tozalash
   if (!role) {
     return ctx.reply("❌ Kechirasiz, sizda bu botdan foydalanish huquqi yo'q.");
   }

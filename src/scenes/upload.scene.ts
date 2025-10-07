@@ -42,6 +42,7 @@ uploadScene.enter(async (ctx) => {
 });
 
 uploadScene.hears("/start", async (ctx) => {
+  ctx.session = {}; // tozalash
   return ctx.scene.enter("start");
 });
 
@@ -126,7 +127,8 @@ uploadScene.on(message("text"), async (ctx) => {
         `📄 Fayl: ${newDoc.fileName}`
     );
 
-    // Return to start scene
+    // Return to start scene 
+    ctx.session = {}; // tozalash
     return ctx.scene.enter("start");
   } catch (error) {
     console.error("Error uploading to channel:", error);
